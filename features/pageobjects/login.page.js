@@ -1,5 +1,3 @@
-
-
 import Page from './page.js';
 
 /**
@@ -7,18 +5,6 @@ import Page from './page.js';
  */
 class LoginPage extends Page {
 
-    get inputPassword () {
-        return $('#password');
-    }
-
-    get btnSubmit () {
-        return $('button[type="submit"]');
-    }
-
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
     async login (username, password) {
         var getUsername = await $('input[type="text"]'); 
         var getPassword = await $('input[type="password"]');
