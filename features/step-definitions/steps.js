@@ -34,5 +34,6 @@ When(/^I do the (.*) dailies$/, async (town) => {
     switch(town) {
         case "Louise":
             await LouiseTown.dailies();
+            break;
     }
 });
