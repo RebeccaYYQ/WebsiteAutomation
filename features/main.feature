@@ -12,7 +12,7 @@ Feature: Automate DV dalies
   Scenario Outline: Do dailies
     
     Given I am on the <page> page
-    When I do the <town> dailies
+    When I do the <page> dailies
 
     Examples:
     | page   |

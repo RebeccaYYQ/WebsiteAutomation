@@ -30,8 +30,8 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
     Louise Hill page
 *****************/
 
-When(/^I do the (.*) dailies$/, async (town) => {
-    switch(town) {
+When(/^I do the (.*) dailies$/, async (page) => {
+    switch(page) {
         case "Louise":
             await LouiseTown.dailies();
             break;

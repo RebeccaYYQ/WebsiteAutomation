@@ -1,8 +1,11 @@
 import Page from './page.js';
+import mainDailies from './mainDailies.js';
 
 class LouisePage extends Page {
     async dailies() {
-        console.log("wow");
+        //Old Farmhand first
+        mainDailies.npcSelect(4, "daily");
+
     }
 
     open () {
