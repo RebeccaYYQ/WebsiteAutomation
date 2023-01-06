@@ -30,6 +30,10 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
     await LoginPage.login(username, password)
 });
 
+When(/^I login to Figment$/, async () => {
+    await Figment.login();
+});
+
 /*****************
     Louise Hill page
 *****************/

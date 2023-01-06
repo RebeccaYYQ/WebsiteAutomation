@@ -1,3 +1,7 @@
+Priority
+    Edit the login When so it works for both DV and Fig
+    Get around hardcoding the un and pw for Fig
+
 Plan
     For now, just do everything automatically. If you don't have an item then skip
     Add adjustable features later

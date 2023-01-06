@@ -23,10 +23,11 @@ Feature: Automate Figment exploring
     Scenario Outline: As a user, I can login to Figment
 
       Given I am on the <page> page
+      When I login to Figment
       # When I change active figment pet
       # When I explore <region>
 
       Examples:
-      | page     | username              | password      | region     |
-      | figLogin | micelover12@gmail.com |   | Spookytown |
+      | page     | region     |
+      | figLogin | Spookytown |
 
