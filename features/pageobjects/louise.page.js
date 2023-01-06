@@ -5,6 +5,7 @@ class LouisePage extends Page {
     async dailies() {
         //Old Farmhand first
         mainDailies.npcSelect(4, "daily");
+        mainDailies.getDaily();
 
     }
 

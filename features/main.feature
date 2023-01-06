@@ -17,3 +17,4 @@ Feature: Automate DV dalies
     Examples:
     | page   |
     | Louise |
+

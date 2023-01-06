@@ -1,0 +1,66 @@
+To keep track of text for each quest
+
+---------- giveClothes
+-----keywords: cloth, weapon, armor
+Give him farming clothes.
+Give him two melee weapons.
+Give her two interesting clothing items.
+Give 2 pieces of Armor
+
+---------- giveFood
+-----keywords: food, give turnip
+Give him a new food item.
+Give her a Plump Turnip.
+Give her 3 food items.
+
+---------- feedPet
+-----keywords: feed
+Feed your pet thrice.
+Feed your pet thrice.
+
+---------- interactPet 
+-----keywords: interact
+Show him a Turnipling and interact with it twice.
+Show them a Bell Fox or Stoic Deericorn and interact with it thrice.
+
+---------- spinChance 
+-----keywords: chance
+Spin Bearnard's Chance machine thrice.
+
+---------- showPet
+-----keywords: show 
+Show her a Turnipling.
+
+---------- itemAlchemy 
+-----keywords: alchemy
+Perform item alchemy once.
+Perform Item Alchemy once.
+
+---------- raisePetAffection 
+-----keywords: affection
+Raise your pet's affection by 15.
+
+---------- helpOtherNPC 
+-----keywords: daily
+Help Buli with a daily errand.
+Do another NPC's daily quest once.
+Help Fantasia with a daily quest. Any type of completion counts.
+
+---------- commentProfile 
+-----keywords: comment
+Comment on a user profile twice.
+
+---------- completeTrade 
+-----keywords: trade
+Complete 3 Trades Market transactions. 
+
+---------- havePotatoes 
+-----keywords: potato
+Have 10,000 potatoes on hand.
+
+SKIPPED
+---------- playgroundGame 
+Equip a stylish hairstyle and play on the playground 2 times.
+
+---------- adventure 
+Answer 3 riddles correctly while Adventure.
