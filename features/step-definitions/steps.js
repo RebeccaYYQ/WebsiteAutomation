@@ -16,8 +16,8 @@ Given(/^I am on the (.*) page$/, async (page) => {
         case "Louise":
             await LouiseTown.open();
             break;
-        case "Figment":
-            await Figment.open();
+        case "figLogin":
+            await Figment.open('login');
             break;
     }
 });
