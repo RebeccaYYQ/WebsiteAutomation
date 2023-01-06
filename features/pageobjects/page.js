@@ -10,4 +10,8 @@ export default class Page {
     open (path) {
         return browser.url(`https://dappervolk.com/${path}`)
     }
+
+    openFig (path) {
+        return browser.url(`https://figment.pet/${path}`)
+    }
 }
