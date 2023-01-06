@@ -14,6 +14,18 @@ class Figment extends Page {
         await getPassword.setValue('');
         await getButton.click();
     }
+
+    //switch to a random pet that is not my main one
+    async getPet(type) {
+        //if the pet wanted is my main, change the filter so its by age.
+        if (type == "main") {
+            console.log("main");
+        }
+
+        var getMakeActiveButton = await $('a[class="btn btn-sm btn-primary btn-block"]');
+
+        await getMakeActiveButton.click();
+    }
 }
 
 export default new Figment();

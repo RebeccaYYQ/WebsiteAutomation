@@ -45,3 +45,16 @@ When(/^I do the (.*) dailies$/, async (page) => {
             break;
     }
 });
+
+/*****************
+    For Figment
+*****************/
+
+When(/^I change active figment pet to "([^"]*)"$/, async (petType) => {
+    switch(petType) {
+        case "random":
+            await Figment.openFig("mypets");
+            await Figment.getPet("random");
+            break;
+    }
+});

@@ -24,7 +24,7 @@ Feature: Automate Figment exploring
 
       Given I am on the <page> page
       When I login to Figment
-      # When I change active figment pet
+      When I change active figment pet to "random"
       # When I explore <region>
 
       Examples:
