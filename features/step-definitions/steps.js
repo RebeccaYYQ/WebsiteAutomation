@@ -2,6 +2,7 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 
 import LoginPage from '../pageobjects/login.page.js';
 import LouiseTown from '../pageobjects/louise.page.js';
+import Figment from '../pageobjects/figment.page.js';
 
 /*****************
     General
@@ -14,6 +15,9 @@ Given(/^I am on the (.*) page$/, async (page) => {
             break;
         case "Louise":
             await LouiseTown.open();
+            break;
+        case "Figment":
+            await Figment.open();
             break;
     }
 });
