@@ -26,6 +26,17 @@ class Figment extends Page {
 
         await getMakeActiveButton.click();
     }
+
+    async exploreSpooky() {
+        var exploreBtn = await $('a[class="explore-main-button"]');
+        var noSteps = await $('strong');
+        console.log(await noSteps.getText());
+        exploreBtn.click();
+
+        
+        
+
+    }
 }
 
 export default new Figment();
