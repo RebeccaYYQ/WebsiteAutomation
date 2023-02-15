@@ -58,3 +58,10 @@ When(/^I change active figment pet to "([^"]*)"$/, async (petType) => {
             break;
     }
 });
+
+When(/^I explore (.*)$/, async (region) => {
+    if (region == "Spookytown") {
+        await Figment.openFig("adventure/Spookytown");
+        await Figment.exploreSpooky();
+    }
+})

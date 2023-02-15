@@ -26,6 +26,29 @@ class Figment extends Page {
 
         await getMakeActiveButton.click();
     }
+
+    async exploreSpooky() {
+        var exploreBtn = await $('a[class="explore-main-button"]');
+        var noSteps = await $('strong');
+        console.log("steps: " + await noSteps.getText());
+        exploreBtn.click();
+
+        var contentElem = await $('div[class="col-xs-8 flavor"]');
+        var contentElemExist = await contentElem.isExisting();
+        var contentText;
+
+        while (contentElemExist == false) {
+            exploreBtn.click();
+            contentElem = await $('div[class="col-xs-8 flavor"]');
+            contentElemExist = await contentElem.isExisting();
+            await browser.pause(500);
+        }
+
+        contentText = await contentElem.getText();
+            console.log(contentText);
+        
+
+    }
 }
 
 export default new Figment();
