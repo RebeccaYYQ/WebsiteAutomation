@@ -1,4 +1,5 @@
 import Page from './page.js';
+import loginInfo from '../pageobjects/userDetails.js';
 
 class Figment extends Page {
     open(page) {
@@ -10,8 +11,8 @@ class Figment extends Page {
         var getPassword = await $('input[id="password"]');
         var getButton = await $('input[type="submit"]');
 
-        await getUsername.setValue('micelover12@gmail.com');
-        await getPassword.setValue('');
+        await getUsername.setValue(loginInfo.Figment_username);
+        await getPassword.setValue(loginInfo.Figment_password);
         await getButton.click();
     }
 
