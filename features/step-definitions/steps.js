@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 
-import LoginPage from '../pageobjects/login.page.js';
+import Dappervolk from '../pageobjects/dappervolk.page.js';
 import LouiseTown from '../pageobjects/louise.page.js';
 import Figment from '../pageobjects/figment.page.js';
 
@@ -10,8 +10,8 @@ import Figment from '../pageobjects/figment.page.js';
 
 Given(/^I am on the (.*) page$/, async (page) => {
     switch(page) {
-        case "login":
-            await LoginPage.open();
+        case "dvLogin":
+            await Dappervolk.open();
             break;
         case "Louise":
             await LouiseTown.open();
@@ -26,8 +26,8 @@ Given(/^I am on the (.*) page$/, async (page) => {
     Login page
 *****************/
 
-When(/^I login with (\w+) and (.+)$/, async (username, password) => {
-    await LoginPage.login(username, password)
+When(/^I login to Dappervolk$/, async () => {
+    await Dappervolk.login();
 });
 
 When(/^I login to Figment$/, async () => {

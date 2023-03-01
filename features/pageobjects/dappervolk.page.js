@@ -1,17 +1,18 @@
 import Page from './page.js';
+import loginInfo from '../pageobjects/userDetails.js';
 
 /**
  * sub page containing specific selectors and methods for a specific page
  */
-class LoginPage extends Page {
+class Dappervolk extends Page {
 
-    async login (username, password) {
+    async login () {
         var getUsername = await $('input[type="text"]'); 
         var getPassword = await $('input[type="password"]');
         var getButton = await $('button[type="submit"]');
         
-        await getUsername.setValue(username);
-        await getPassword.setValue(password);
+        await getUsername.setValue(loginInfo.DV_username);
+        await getPassword.setValue(loginInfo.DV_password);
         await getButton.click();
     }
 
@@ -23,4 +24,4 @@ class LoginPage extends Page {
     }
 }
 
-export default new LoginPage();
+export default new Dappervolk();
