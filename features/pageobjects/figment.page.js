@@ -30,25 +30,24 @@ class Figment extends Page {
 
     async exploreSpooky() {
         var exploreBtn = await $('a[class="explore-main-button"]');
-        var noSteps = await $('strong');
-        console.log("steps: " + await noSteps.getText());
-        exploreBtn.click();
+        var noSteps = eval(await (await $('strong')).getText());
+        console.log("steps: " + noSteps);
+        await browser.pause(2000);
+        await exploreBtn.click();
 
-        var contentElem = await $('div[class="col-xs-8 flavor"]');
-        var contentElemExist = await contentElem.isExisting();
+        var contentElem;
+        var contentElemExist = false;
         var contentText;
 
         while (contentElemExist == false) {
-            exploreBtn.click();
+            await exploreBtn.click();
+            await browser.pause(2000);
             contentElem = await $('div[class="col-xs-8 flavor"]');
             contentElemExist = await contentElem.isExisting();
-            await browser.pause(500);
         }
 
         contentText = await contentElem.getText();
-            console.log(contentText);
-        
-
+        console.log(contentText);
     }
 }
 
