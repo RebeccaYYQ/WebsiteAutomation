@@ -1,6 +1,10 @@
 import Page from './page.js';
 import loginInfo from '../pageobjects/userDetails.js';
 
+var oneClick = ['graveyard', 'pond', 'purple', 'caramel', 'undulate'];
+var options = ['buzzing', 'fog', 'bowl', 'kids'];
+var keyword;
+
 class Figment extends Page {
     open(page) {
         return super.openFig(page);
@@ -37,18 +41,70 @@ class Figment extends Page {
 
         var contentElem;
         var contentElemExist = false;
-        var contentText;
 
-        while (contentElemExist == false) {
+        //if there is content that is not blank, read it and make a decision
+        while (noSteps > 0) {
             await exploreBtn.click();
             await browser.pause(2000);
+
             contentElem = await $('div[class="col-xs-8 flavor"]');
             contentElemExist = await contentElem.isExisting();
+
+            if (contentElemExist) {
+                await this.readText(contentElem);
+            }
+
+            noSteps = eval(await (await $('strong')).getText());
+            console.log("steps: " + noSteps);
+        }
+    }
+
+    async readText(content) {
+        keyword = 'nothing';
+
+        var contentText = await content.getText();
+
+        var oneClickBtn = await $('a[class="btn btn-primary btn-xs"]');
+
+        //for every item in that one click list, find if that keyword is in the contentText
+        for (let i = 0; i < oneClick.length; i++) {
+            if (contentText.includes(oneClick[i])) {
+                keyword = 'oneClick';
+            }
+        }
+        //for every item in that two click list, find if that keyword is in the contentText
+        for (let i = 0; i < options.length; i++) {
+            if (contentText.includes(options[i])) {
+                keyword = options[i];
+            }
         }
 
-        contentText = await contentElem.getText();
-        console.log(contentText);
+        console.log("keyword is " + keyword);
+
+        switch(keyword) {
+            case 'oneClick':
+                await oneClickBtn.click();
+                break;
+            case 'buzzing':
+                await (await $('=Back away, slowly.')).click();
+                break;
+            case 'fog':
+                await (await $('=Enter the mist.')).click();
+                break;
+            case 'bowl':
+                await (await $('=Take just one.')).click();
+                break;
+            case 'kids':
+                await (await $('=Treat!')).click();
+                break;
+            default:
+                break;
+        }
+
+        await browser.pause(2000);
+
     }
 }
+
 
 export default new Figment();
