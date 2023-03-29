@@ -9,14 +9,14 @@ Feature: Automate DV dalies
       | page    |
       | dvLogin |
 
-#   Scenario Outline: Do dailies
+  Scenario Outline: Do dailies
     
-#     Given I am on the <page> page
-#     When I do the <page> dailies
+    Given I am on the <page> page
+    When I do the <page> dailies
 
-#     Examples:
-#     | page   |
-#     | Louise |
+    Examples:
+    | page   |
+    | Louise |
 
 # Feature: Automate Figment exploring
 

@@ -5,6 +5,8 @@ class LouisePage extends Page {
     async dailies() {
         //Old Farmhand first
         mainDailies.npcSelect(4, "daily");
+        await browser.pause(4000);
+        console.log("-----------------------NPC was selected and box is open");
         mainDailies.getDaily();
 
     }

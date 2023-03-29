@@ -7,11 +7,14 @@ class mainDailies {
     async npcSelect(id, type) {
         var npc = await $(`div[data-id="npc-${id}"]`);
         await npc.click();
+        await browser.pause(2000);
 
         switch (type) {
             case "daily":
                 var dailiesLink = await $('a[class="quest-a repeatable"]');
+                //var dailiesLink = await $(`${npc}/div/div[2]/ul/li[2]/a`);
                 await dailiesLink.click();
+                await browser.pause(2000);
                 break;
             case "chance":
                 var chanceLink = await $('a[class="hl shop-a"]');
@@ -31,6 +34,7 @@ class mainDailies {
 
     //read the text in the menu
     async readNarration() {
+        await browser.pause(2000);
         var questText = await $('em[class="narration"]');
         var quest = "none";
         
@@ -44,16 +48,19 @@ class mainDailies {
 
     //control the menu of the quest/chat box
     async skipChat() {
+        await browser.pause(2000);
         var skipButton = await $('button[title="Fast Forward (\'f\' key)"]');
         await skipButton.click();
     }
 
     async backChat() {
+        await browser.pause(2000);
         var backButton = await $('button[title="Rewind (\'a\' key)"]');
         await backButton.click();
     }
 
     async selectOption(option) {
+        await browser.pause(2000);
         var optionButton = await $(`button[class="option-${option}"]`);
         await optionButton.click();
     }
