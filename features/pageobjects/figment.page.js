@@ -1,9 +1,11 @@
 import Page from './page.js';
 import loginInfo from '../pageobjects/userDetails.js';
 
+//for the reading text loop
 var oneClick = ['graveyard', 'pond', 'purple', 'caramel', 'undulate'];
 var options = ['buzzing', 'fog', 'bowl', 'kids'];
 var keyword;
+var contentText;
 
 class Figment extends Page {
     open(page) {
@@ -41,7 +43,7 @@ class Figment extends Page {
 
         var contentElem;
         var contentElemExist = false;
-
+        
         //if there is content that is not blank, read it and make a decision
         while (noSteps > 0) {
             await exploreBtn.click();
@@ -51,7 +53,11 @@ class Figment extends Page {
             contentElemExist = await contentElem.isExisting();
 
             if (contentElemExist) {
-                await this.readText(contentElem);
+                contentText = await contentElem.getText();
+
+                if (contentText.includes('feathers') == false) {
+                    await this.readText(contentText);
+                }
             }
 
             noSteps = eval(await (await $('strong')).getText());
@@ -59,10 +65,8 @@ class Figment extends Page {
         }
     }
 
-    async readText(content) {
+    async readText(contentText) {
         keyword = 'nothing';
-
-        var contentText = await content.getText();
 
         var oneClickBtn = await $('a[class="btn btn-primary btn-xs"]');
 
